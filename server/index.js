@@ -9,10 +9,7 @@ const userRoute = require("./routes/users");
 
 mongoose.set("strictQuery", false);
 mongoose
-  .connect(
-    "mongodb+srv://rushikesh:rushikesh@map.7rnqycp.mongodb.net/?retryWrites=true&w=majority",
-    { useNewUrlParser: true }
-  )
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true })
   .then(() => {
     console.log("MONGO DB Connected");
   })
